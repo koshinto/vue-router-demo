@@ -1,5 +1,5 @@
 <template>
-  <div id="main" v-on:click.left="leftClick($event)">
+  <div id="main" v-on:click.right="rightClick($event)">
     <h1>{{ msg }}</h1>
     <button @click="getDateTime($event)">push counter: {{ count }}</button>
     <p id="date">{{ datetime }}</p>
@@ -28,16 +28,20 @@ export default {
     clear () {
       this.name = ''
     },
-    leftClick (event) {
+    rightClick (event) {
       window.alert(
-        '左クリック座標:' + event.clientX + ', ' + event.clientY
+        '右クリック座標:' + event.clientX + ', ' + event.clientY
       )
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+
 #date {
   display: block;
   background-color: #99ffff;
